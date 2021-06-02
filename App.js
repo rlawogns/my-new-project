@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default class App extends React.Component {
 
   componentDidMount() {
-    fetch('https://raw.githubusercontent.com/example0312/weather-crawler/master/availableCityNames')
+    fetch('https://raw.githubusercontent.com/rlawogns/realcoding_App/CityName/availableCityNames')
       .then(response => response.json())
       .then(console.log);
   }
