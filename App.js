@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => (
   </View>
 );
 
-const DetailScreen = () => (
+const DetailScreen = ({ navigation }) => (
   <View style={styles.container}>
     <WeatherDetailScreen navigation={navigation} />
     <StatusBar style="auto" />
