@@ -13,9 +13,6 @@ const HomeScreen = () => (
   </View>
 );
 
-
-export default class App extends React.Component {
-
 const Stack = createStackNavigator();
 const styles = StyleSheet.create({
   container: {
