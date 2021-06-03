@@ -1,23 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import * as React from 'react';
+import 'react-native-gesture-handler';
+import { View, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import CityList from './CityList';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
+const HomeScreen = () => (
+  <View style={styles.container}>
+    <CityList/>
+    <StatusBar style="auto" />
+  </View>
+);
+
 
 export default class App extends React.Component {
 
-
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <CityList/>
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    );
-  }
-}
+const Stack = createStackNavigator();
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
 });
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
+}
